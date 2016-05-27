@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
+    </dependencies>
+    <scenes>
+        <!--GameInterface-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="GameInterface" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="QuizTime_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" height="0.59999999999999998" alignment="center" layout="vertical" id="9nK-Ve-32g" userLabel="LabelGroup">
+                            <items>
+                                <group width="1" alignment="center" id="EAi-TZ-CXD" userLabel="Score">
+                                    <items>
+                                        <label alignment="center" text="Score" id="OL3-z9-Frr" userLabel="ScoreLabel"/>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="center" verticalAlignment="bottom" id="855-VR-IVz" userLabel="Question">
+                                    <items>
+                                        <label width="1" height="0.90000000000000002" alignment="center" text="Question" textAlignment="center" numberOfLines="5" id="Q7D-c5-Wbo" userLabel="QuestionLabel"/>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                        <group width="1" height="0.40000000000000002" alignment="left" verticalAlignment="bottom" id="zlH-3c-tT1" userLabel="ButtonGroup">
+                            <items>
+                                <button width="0.5" height="1" alignment="left" title="False" id="fkY-Ph-oR8" userLabel="FalseButton">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="backgroundColor" red="1" green="0.020100812986999284" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="19"/>
+                                    <connections>
+                                        <action selector="falseButttonPressed" destination="AgC-eL-Hgc" id="7iQ-R6-u6A"/>
+                                    </connections>
+                                </button>
+                                <button width="0.5" height="1" alignment="left" title="True" id="In0-8w-Vsn" userLabel="TrueButton">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="backgroundColor" red="0.063626663626904501" green="1" blue="0.0019964527455770265" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="19"/>
+                                    <connections>
+                                        <action selector="trueButtonPressed" destination="AgC-eL-Hgc" id="GX7-TE-sUW"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="falseButton" destination="fkY-Ph-oR8" id="gpS-3i-wU5"/>
+                        <outlet property="questionLabel" destination="Q7D-c5-Wbo" id="Mab-uH-Aup"/>
+                        <outlet property="scoreLabel" destination="OL3-z9-Frr" id="MN1-z9-Ics"/>
+                        <outlet property="trueButton" destination="In0-8w-Vsn" id="s59-Zt-Jkv"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="274" y="357"/>
+        </scene>
+        <!--ResultLayout-->
+        <scene sceneID="6L1-gq-TdN">
+            <objects>
+                <controller identifier="ResultLayout" id="B8S-KX-wa3" customClass="ResultsInterfaceController" customModule="QuizTime_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="0.59999999999999998" alignment="center" verticalAlignment="center" id="uYs-iD-1p3" userLabel="LabelGroup">
+                            <items>
+                                <label width="1" height="1" alignment="left" text="Text" textAlignment="center" numberOfLines="5" id="fHE-dU-Hqe" userLabel="ResultLabel">
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="28"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group width="1" height="0.40000000000000002" alignment="left" verticalAlignment="bottom" id="v4f-f2-eEC" userLabel="ButtonGroup">
+                            <items>
+                                <button width="1" height="1" alignment="center" verticalAlignment="bottom" title="Try Again" id="qSa-DT-OoK" userLabel="TryAgainButton">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.50779809727762992" green="0.34645789020016637" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="28"/>
+                                    <connections>
+                                        <action selector="playAgain" destination="B8S-KX-wa3" id="8mo-Ho-uWc"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <color key="backgroundColor" red="0.14604153929958552" green="0.52154682340306302" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="resultLabel" destination="fHE-dU-Hqe" id="LdY-Ps-n1M"/>
+                        <outlet property="tryAgainButton" destination="qSa-DT-OoK" id="2BT-ms-qLs"/>
+                    </connections>
+                </controller>
+            </objects>
+        </scene>
+    </scenes>
+</document>
